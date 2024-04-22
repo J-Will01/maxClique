@@ -3,7 +3,7 @@
 # Created: Friday, April 19th 2024 at 10:12:08                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Sunday, April 21st 2024 19:54:19                              #
+# Last Modified: Sunday, April 21st 2024 20:22:43                              #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
@@ -39,7 +39,8 @@ def main():
 
     graph = nx.Graph()
     graph = nx.read_adjlist(filePath)
-    bf.bruteforce(graph)
+    print(f"Max Clique: {bf.bruteforce(graph)} Nodes")
+
     # Draw the graph
     # nx.draw(graph, with_labels=True)
     # plt.show()
