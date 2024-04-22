@@ -3,12 +3,11 @@
 # Created: Sunday, April 21st 2024 at 17:56:18                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Sunday, April 21st 2024 21:41:14                              #
+# Last Modified: Sunday, April 21st 2024 22:33:43                              #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
 ## Supplemental file to run brute force maximum clique finding in the main file
-import tkinter as tk
 import networkx as nx
 
 
@@ -20,7 +19,7 @@ def isClique(graph: nx.Graph, subset):
     return True
 
 
-def bruteforce(graph: nx.Graph):
+def maxClique(graph: nx.Graph):
     numNodes = graph.number_of_nodes()
     maxClique = []
 

@@ -3,11 +3,13 @@
 # Created: Friday, April 19th 2024 at 10:12:08                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Sunday, April 21st 2024 21:40:13                              #
+# Last Modified: Sunday, April 21st 2024 22:24:59                              #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
-import bruteForce as bf
+import bruteForce
+import graphComplement
+
 import networkx as nx
 
 import matplotlib.pyplot as plt
@@ -52,11 +54,13 @@ def main():
     graph: nx.Graph = nx.read_adjlist(filePath)
 
     start = time.time()
-    clique = bf.bruteforce(graph)
+    clique = graphComplement.maxClique(graph)
     end = time.time()
     elapsedTime = round(end - start, 3)
 
-    writeData(filePath, clique, graph.number_of_nodes(), elapsedTime, "Brute Force")
+    print(f"Max Clique: {clique} of size {len(clique)}")
+    print(f"Time Elapsed: {elapsedTime}s")
+    # writeData(filePath, clique, graph.number_of_nodes(), elapsedTime, "Brute Force")
 
     # Draw the graph
     # nx.draw(graph, with_labels=True)
