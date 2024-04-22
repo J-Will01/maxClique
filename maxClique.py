@@ -3,7 +3,7 @@
 # Created: Friday, April 19th 2024 at 10:12:08                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Sunday, April 21st 2024 20:50:47                              #
+# Last Modified: Sunday, April 21st 2024 21:40:13                              #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
@@ -11,6 +11,7 @@ import bruteForce as bf
 import networkx as nx
 
 import matplotlib.pyplot as plt
+import time
 
 import tkinter as tk
 from tkinter import filedialog
@@ -33,6 +34,16 @@ def getFile():
         return getFile()
 
 
+def writeData(filePath, clique, numNodes, elapsedTime, algoUsed):
+    print(f"Max Clique: {clique} of size {len(clique)}")
+    print(f"Time Elapsed: {elapsedTime}s")
+
+    with open("data.txt", "a") as file:
+        file.write(
+            f"{algoUsed} | {filePath} | {numNodes} | {clique} | {len(clique)} | {elapsedTime}\n"
+        )
+
+
 def main():
 
     filePath = "G/D14G100.adjlist"  # getFile() change back for final
@@ -40,12 +51,17 @@ def main():
     graph = nx.Graph()
     graph: nx.Graph = nx.read_adjlist(filePath)
 
-    print(f"Max Clique: {bf.bruteforce(graph)}")
-    print(f"Max Clique has {len(bf.bruteforce(graph))} nodes")
-    # Draw the graph
-    nx.draw(graph, with_labels=True)
+    start = time.time()
+    clique = bf.bruteforce(graph)
+    end = time.time()
+    elapsedTime = round(end - start, 3)
 
-    plt.show()
+    writeData(filePath, clique, graph.number_of_nodes(), elapsedTime, "Brute Force")
+
+    # Draw the graph
+    # nx.draw(graph, with_labels=True)
+    # plt.show()
+
     return 0
 
 

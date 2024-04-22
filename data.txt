@@ -1,0 +1,24 @@
+###############################################################################
+# File: data.txt                                                               #
+# Created: Sunday, April 21st 2024 at 21:15:30                                 #
+# Author: Jonathan Williams                                                    #
+# -----                                                                        #
+# Last Modified: Sunday, April 21st 2024 21:34:21                              #
+# Modified By: Jonathan Williams                                               #
+###############################################################################
+
+Brute Force | G/D14G100.adjlist | 20 | [2, 10, 14] | 3 | 7.7
+Brute Force | G/D14G100.adjlist | 20 | [2, 10, 14] | 3 | 7.997
+Brute Force | G/D14G100.adjlist | 20 | [2, 10, 14] | 3 | 6.415
+Brute Force | G/D14G100.adjlist | 15 | [2, 10, 14] | 3 | 0.201
+Brute Force | G/D14G100.adjlist | 15 | [2, 10, 14] | 3 | 0.2
+Brute Force | G/D14G100.adjlist | 24 | [2, 10, 14] | 3 | 115.916
+Brute Force | G/D14G100.adjlist | 23 | [2, 10, 14] | 3 | 57.836
+Brute Force | G/D14G100.adjlist | 22 | [2, 10, 14] | 3 | 29.235
+Brute Force | G/D14G100.adjlist | 21 | [2, 10, 14] | 3 | 13.668
+Brute Force | G/D14G100.adjlist | 20 | [2, 10, 14] | 3 | 7.708
+Brute Force | G/D14G100.adjlist | 19 | [2, 10, 14] | 3 | 3.844
+Brute Force | G/D14G100.adjlist | 18 | [2, 10, 14] | 3 | 1.678
+Brute Force | G/D14G100.adjlist | 17 | [2, 10, 14] | 3 | 0.741
+Brute Force | G/D14G100.adjlist | 16 | [2, 10, 14] | 3 | 0.473
+Brute Force | G/D14G100.adjlist | 15 | [2, 10, 14] | 3 | 0.229
