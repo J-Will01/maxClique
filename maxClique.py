@@ -3,7 +3,7 @@
 # Created: Friday, April 19th 2024 at 10:12:08                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Sunday, April 21st 2024 20:22:43                              #
+# Last Modified: Sunday, April 21st 2024 20:50:47                              #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
@@ -38,12 +38,14 @@ def main():
     filePath = "G/D14G100.adjlist"  # getFile() change back for final
 
     graph = nx.Graph()
-    graph = nx.read_adjlist(filePath)
-    print(f"Max Clique: {bf.bruteforce(graph)} Nodes")
+    graph: nx.Graph = nx.read_adjlist(filePath)
 
+    print(f"Max Clique: {bf.bruteforce(graph)}")
+    print(f"Max Clique has {len(bf.bruteforce(graph))} nodes")
     # Draw the graph
-    # nx.draw(graph, with_labels=True)
-    # plt.show()
+    nx.draw(graph, with_labels=True)
+
+    plt.show()
     return 0
 
 
