@@ -3,7 +3,7 @@
 # Created: Sunday, April 21st 2024 at 17:56:18                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Sunday, April 21st 2024 20:50:54                              #
+# Last Modified: Sunday, April 21st 2024 21:41:14                              #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
@@ -28,7 +28,8 @@ def bruteforce(graph: nx.Graph):
     for subset in range(1, 2**numNodes):
         # Bitwise shifting to create unique subsets
         vertices = [v for v in range(numNodes) if subset & (1 << v)]
-        print("Testing Subset: ", vertices, " ", isClique(graph, vertices))
+        if len(vertices) == 1:
+            print(f"Testing Node {vertices[0]}")
         if isClique(graph, vertices) and len(vertices) > len(maxClique):
             maxClique = vertices
 
