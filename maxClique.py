@@ -3,12 +3,14 @@
 # Created: Friday, April 19th 2024 at 10:12:08                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Sunday, April 21st 2024 23:24:15                              #
+# Last Modified: Tuesday, April 23rd 2024 16:48:54                             #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
 import bruteForce
 import graphComplement
+import original
+import genetic
 
 import networkx as nx
 
@@ -48,23 +50,18 @@ def writeData(filePath, clique, numNodes, elapsedTime, algoUsed):
 
 def main():
 
-    filePath = "G/D14G100.adjlist"  # getFile() change back for final
+    filePath = "competition/G250.adjlist"  # getFile()
 
     graph = nx.Graph()
     graph: nx.Graph = nx.read_adjlist(filePath)
+    # graph: nx.Graph = nx.read_edgelist(path=filePath, comments="c")
 
     start = time.time()
     clique = graphComplement.maxClique(graph)
     end = time.time()
     elapsedTime = round(end - start, 3)
 
-    print(f"Max Clique: {clique} of size {len(clique)}")
-    print(f"Time Elapsed: {elapsedTime}s")
-    # writeData(filePath, clique, graph.number_of_nodes(), elapsedTime, "Brute Force")
-
-    # Draw the graph
-    # nx.draw(graph, with_labels=True)
-    # plt.show()
+    writeData(filePath, clique, graph.number_of_nodes(), elapsedTime, "Vertex Cover")
 
     return 0
 
