@@ -22,3 +22,6 @@ Brute Force | G/D14G100.adjlist | 18 | [2, 10, 14] | 3 | 1.678
 Brute Force | G/D14G100.adjlist | 17 | [2, 10, 14] | 3 | 0.741
 Brute Force | G/D14G100.adjlist | 16 | [2, 10, 14] | 3 | 0.473
 Brute Force | G/D14G100.adjlist | 15 | [2, 10, 14] | 3 | 0.229
+Vertex Cover | competition/G250.adjlist | 250 | ['1', '21', '85', '86', '102', '112'] | 6 | 316.58
+Vertex Cover | competition/G250.adjlist | 250 | ['5', '22', '53', '161', '178', '188'] | 6 | 122.502
+Vertex Cover | competition/G250.adjlist | 250 | ['2', '15', '42', '61', '163', '168'] | 6 | 130.2
