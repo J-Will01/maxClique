@@ -3,7 +3,7 @@
 # Created: Sunday, April 21st 2024 at 21:56:52                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Wednesday, April 24th 2024 11:24:07                           #
+# Last Modified: Wednesday, April 24th 2024 11:25:44                           #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 ## Supplemental file to run a graph complement algorithm to find a maximum clique
@@ -22,16 +22,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 
-# Vertex Cover Algorithm
-# Proof: This Algorithm finds in the end is a matching (a set of edges no two
-# of which share an endpoint) that is “maximal” (meaning that you can’t add any
-# more edges to it and keep it a matching). This means if we take both endpoints
-# of those edges, we must have a vertex cover. In particular, if the algorithm
-# picked k edges, the vertex cover found has size 2k. But, any vertex cover must
-# have size at least k since it needs to have at least one endpoint of each of
-# these edges, and since these edges don’t touch, these are k different vertices.
-# So the algorithm is a 2-approximation
-# From: https://www.cs.cmu.edu/~avrim/451f13/lectures/lect1105.pdf
 def vertexCover(graph: nx.Graph):
     edgeList = list(graph.edges())
     cover = set()
