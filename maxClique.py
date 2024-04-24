@@ -3,20 +3,18 @@
 # Created: Friday, April 19th 2024 at 10:12:08                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Tuesday, April 23rd 2024 16:48:54                             #
+# Last Modified: Wednesday, April 24th 2024 12:54:40                           #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
+import sys
 import bruteForce
 import graphComplement
-import original
 import genetic
 
 import networkx as nx
-
 import matplotlib.pyplot as plt
 import time
-
 import tkinter as tk
 from tkinter import filedialog
 
@@ -48,14 +46,21 @@ def writeData(filePath, clique, numNodes, elapsedTime, algoUsed):
         )
 
 
-def main():
+def quit():
+    root.destroy()  # Close the main window
+    sys.exit()
 
-    filePath = "competition/G250.adjlist"  # getFile()
 
-    graph = nx.Graph()
-    graph: nx.Graph = nx.read_adjlist(filePath)
-    # graph: nx.Graph = nx.read_edgelist(path=filePath, comments="c")
+def brute():
+    start = time.time()
+    clique = bruteForce.maxClique(graph)
+    end = time.time()
+    elapsedTime = round(end - start, 3)
 
+    writeData(filePath, clique, graph.number_of_nodes(), elapsedTime, "Brute Force")
+
+
+def vertex():
     start = time.time()
     clique = graphComplement.maxClique(graph)
     end = time.time()
@@ -63,8 +68,50 @@ def main():
 
     writeData(filePath, clique, graph.number_of_nodes(), elapsedTime, "Vertex Cover")
 
-    return 0
+
+def original():
+    start = time.time()
+    clique = genetic.maxClique(graph)
+    end = time.time()
+    elapsedTime = round(end - start, 3)
+
+    writeData(filePath, clique, graph.number_of_nodes(), elapsedTime, "Original GA")
 
 
 if __name__ == "__main__":
-    main()
+    # Create the main window
+    root = tk.Tk()
+    root.title("Algorithm Menu")
+
+    # Calculate the position to center the window
+    screenX = root.winfo_screenwidth()
+    screenY = root.winfo_screenheight()
+    xPos = (screenX - 200) // 2
+    yPos = (screenY - 200) // 2
+    root.geometry(f"200x200+{xPos}+{yPos}")
+
+    # Get File for input
+    filePath = getFile()
+
+    # Get graph from file
+    graph: nx.Graph = nx.read_adjlist(filePath)
+
+    # Add label for instructions
+    lbl_instructions = tk.Label(root, text="Select an Algorithm:")
+    lbl_instructions.pack()
+
+    # Create the menu buttons
+    btn_algorithm_1 = tk.Button(root, text="Brute Force", command=brute)
+    btn_algorithm_1.pack()
+
+    btn_algorithm_2 = tk.Button(root, text="Vertex Cover", command=vertex)
+    btn_algorithm_2.pack()
+
+    btn_algorithm_3 = tk.Button(root, text="Original GA", command=original)
+    btn_algorithm_3.pack()
+
+    btn_quit = tk.Button(root, text="Quit", command=quit)
+    btn_quit.pack()
+
+    # Run the main event loop
+    root.mainloop()
