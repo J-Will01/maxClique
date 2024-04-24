@@ -53,3 +53,8 @@ An independent set of a graph G is equivalent to G with one of it's Vertex Cover
 
 This method _heavily_ depends on the effectiveness of the VC found, so this version of the algorithm uses a VC that guarantees no worse than 2 times the optimal vertex cover.
 
+**Proof of No More than 2 Times Optimal Vertex Cover** 
+> This Algorithm finds in the end is a matching (a set of edges no two of which share an endpoint) that is “maximal” (meaning that you can’t add any more edges to it and keep it a matching). This means if we take both endpoints of those edges, we must have a vertex cover. In particular, if the algorithm picked k edges, the vertex cover found has size 2k. But, any vertex cover must have size at least k since it needs to have at least one endpoint of each of these edges, and since these edges don’t touch, these are k different vertices.So the algorithm is a 2-approximation 
+
+_From: https://www.cs.cmu.edu/~avrim/451f13/lectures/lect1105.pdf_
+
