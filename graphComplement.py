@@ -3,7 +3,7 @@
 # Created: Sunday, April 21st 2024 at 21:56:52                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Tuesday, April 23rd 2024 16:59:13                             #
+# Last Modified: Wednesday, April 24th 2024 11:24:07                           #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 ## Supplemental file to run a graph complement algorithm to find a maximum clique
@@ -60,7 +60,7 @@ def maxClique(graph: nx.Graph):
     bestClique = []
     minCliqueSize = 0
     failsafe = 0
-    failsafeMax = 2000
+    failsafeMax = 100
     while 1:
         print("Failsafe:")
         while not complementGraph.nodes or len(complementGraph.nodes) < minCliqueSize:
