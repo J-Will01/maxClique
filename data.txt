@@ -3,7 +3,7 @@
 # Created: Sunday, April 21st 2024 at 21:15:30                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Sunday, April 21st 2024 21:34:21                              #
+# Last Modified: Thursday, April 25th 2024 12:37:32                            #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
@@ -25,3 +25,93 @@ Brute Force | G/D14G100.adjlist | 15 | [2, 10, 14] | 3 | 0.229
 Vertex Cover | competition/G250.adjlist | 250 | ['1', '21', '85', '86', '102', '112'] | 6 | 316.58
 Vertex Cover | competition/G250.adjlist | 250 | ['5', '22', '53', '161', '178', '188'] | 6 | 122.502
 Vertex Cover | competition/G250.adjlist | 250 | ['2', '15', '42', '61', '163', '168'] | 6 | 130.2
+Vertex Cover | competition/G1000.adjlist | 1000 | ['330', '598', '841', '914'] | 4 | 40.114
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['34', '89'] | 2 | 0.691
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['34', '57'] | 2 | 0.66
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['6', '81'] | 2 | 0.725
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['43', '75'] | 2 | 0.656
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['52', '90'] | 2 | 0.782
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['58', '90'] | 2 | 0.646
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['3', '47'] | 2 | 0.634
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['18', '51'] | 2 | 0.716
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['30', '64'] | 2 | 0.647
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D11G400.adjlist | 400 | ['33', '296'] | 2 | 25.342
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/Q15V100.adjlist | 100 | ['14', '35', '49', '79'] | 4 | 0.66
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/Q15V100.adjlist | 100 | ['41', '49', '57', '64', '72', '95'] | 6 | 0.843
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 7] | 3 | 0.01
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 16] | 3 | 0.01
+Brute Force | G/D14G100.adjlist | 21 | [2, 10, 14] | 3 | 3.645
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 7] | 3 | 0.021
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 7] | 3 | 0.016
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 16] | 3 | 0.018
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 16] | 3 | 0.016
+Original GA | G/D14G100.adjlist | 21 | [3, 9, 17] | 3 | 0.018
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 7] | 3 | 0.019
+Original GA | G/D14G100.adjlist | 21 | [3, 9, 17] | 3 | 0.019
+Original GA | G/D14G100.adjlist | 21 | [0, 2, 8] | 3 | 0.016
+Original GA | G/D14G100.adjlist | 21 | [0, 2, 8] | 3 | 0.02
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 16] | 3 | 0.019
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 7] | 3 | 0.019
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 7] | 3 | 0.014
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 16] | 3 | 0.018
+Original GA | G/D14G100.adjlist | 21 | [3, 9, 17] | 3 | 0.017
+Original GA | G/D14G100.adjlist | 21 | [3, 9, 17] | 3 | 0.019
+Original GA | G/D14G100.adjlist | 21 | [0, 2, 8] | 3 | 0.019
+Original GA | G/D14G100.adjlist | 21 | [3, 9, 17] | 3 | 0.019
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 16] | 3 | 0.018
+Original GA | G/D14G100.adjlist | 21 | [0, 2, 8] | 3 | 0.02
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 16] | 3 | 0.021
+Original GA | G/D14G100.adjlist | 21 | [1, 4, 16] | 3 | 0.015
+Original GA | G/D14G100.adjlist | 21 | [3, 9, 17] | 3 | 0.016
+Original GA | G/D14G100.adjlist | 21 | [3, 7, 9, 20] | 4 | 0.008
+Original GA | G/D14G100.adjlist | 21 | [2, 10, 14] | 3 | 0.006
+Original GA | G/D14G100.adjlist | 21 | [7, 9, 20] | 3 | 0.007
+Original GA | G/D14G100.adjlist | 21 | [2, 10, 14] | 3 | 0.007
+Original GA | G/D14G100.adjlist | 21 | [6, 7, 20] | 3 | 0.007
+Original GA | G/D14G100.adjlist | 21 | [12, 15, 18] | 3 | 0.01
+Original GA | G/D14G100.adjlist | 21 | [7, 9, 20] | 3 | 0.009
+Original GA | G/D14G100.adjlist | 21 | [12, 15, 18] | 3 | 0.016
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['0', '47'] | 2 | 0.74
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['59', '90'] | 2 | 0.721
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['6', '79'] | 2 | 0.659
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | ['7', '20'] | 2 | 0.695
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [2, 10, 57, 81] | 4 | 0.071
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [9, 20, 26, 77] | 4 | 0.102
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [42, 71, 77, 78] | 4 | 0.096
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [24, 33, 43, 91] | 4 | 0.106
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [0, 8, 47, 78] | 4 | 0.105
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [2, 8, 42, 78] | 4 | 0.075
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [13, 24, 52, 90] | 4 | 0.108
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [7, 58, 69, 97] | 4 | 0.101
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [40, 57, 81, 91] | 4 | 0.095
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [24, 33, 43, 91] | 4 | 0.099
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [57, 72, 91, 93] | 4 | 0.092
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [38, 80, 82, 94] | 4 | 0.102
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [1, 57, 87, 93] | 4 | 0.103
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [49, 66, 80, 84] | 4 | 0.1
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D14G100.adjlist | 100 | [60, 66, 71, 84] | 4 | 0.092
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D11G400.adjlist | 400 | [188, 253, 258, 315, 382] | 5 | 3.079
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/G/D5G1000.adjlist | 1000 | [94, 205, 259, 327, 989] | 5 | 17.463
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [3, 7, 15, 29, 31, 45, 67, 111, 115, 119, 153, 162, 172, 217, 222] | 15 | 4.627
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G1000.adjlist | 1000 | [123, 140, 219, 254, 290, 369, 520, 549, 715, 739, 753, 910, 995] | 13 | 43.351
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G1000.adjlist | 1000 | [50, 192, 244, 297, 309, 398, 423, 435, 520, 591, 670, 693, 914] | 13 | 47.303
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [9, 10, 53, 73, 76, 91, 95, 110, 117, 140, 151, 205, 244, 249] | 14 | 4.035
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [54, 79, 84, 99, 116, 134, 135, 155, 160, 162, 172, 173, 181, 190, 209] | 15 | 4.535
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [21, 54, 84, 99, 116, 134, 146, 160, 161, 162, 172, 187, 190, 204, 208] | 15 | 4.846
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G6000.adjlist | 6000 | [19, 57, 95, 133, 290, 328, 366, 404, 561, 599, 637, 675, 832, 870, 908, 946, 1103, 1141, 1179, 1217, 1374, 1412, 1450, 1488, 1645, 1683, 1721, 1759, 1916, 1954, 1992, 2030, 2187, 2225, 2263, 2301, 2458, 2496, 2534, 2572, 2610, 2729, 2767, 2805, 2843, 2881, 3000, 3038, 3076, 3114, 3152, 3271, 3309, 3347, 3385, 3423, 3542, 3580, 3618, 3656, 3694, 3813, 3851, 3889, 3927, 3965, 4084, 4122, 4160, 4198, 4236, 4355, 4393, 4431, 4469, 4507, 4626, 4664, 4702, 4740, 4778, 4935, 4973, 5011, 5049, 5206, 5244, 5282, 5320, 5477, 5515, 5553, 5591, 5748, 5786, 5824, 5862] | 97 | 677.638
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [7, 31, 57, 63, 88, 103, 113, 132, 140, 146, 163, 168, 205, 212] | 14 | 2.202
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [7, 29, 31, 32, 67, 84, 97, 115, 130, 153, 162, 168, 172, 217, 226] | 15 | 2.135
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G1000.adjlist | 1000 | [169, 186, 199, 225, 244, 306, 485, 581, 636, 680, 784, 967, 975] | 13 | 22.894
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G1000.adjlist | 1000 | [169, 184, 242, 357, 409, 416, 550, 588, 681, 733, 736, 806, 975] | 13 | 29.214
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [15, 35, 54, 83, 111, 119, 141, 152, 182, 205, 217, 221, 229, 237] | 14 | 1.258
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [21, 54, 60, 73, 79, 84, 99, 134, 155, 160, 173, 181, 184, 190, 219] | 15 | 1.1
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G1000.adjlist | 1000 | [76, 300, 337, 403, 520, 569, 598, 613, 644, 727, 732, 808, 863] | 13 | 7.925
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G1000.adjlist | 1000 | [110, 227, 248, 257, 283, 336, 352, 644, 680, 752, 765, 842, 856] | 13 | 10.764
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G1000.adjlist | 1000 | [28, 157, 163, 313, 345, 382, 390, 428, 492, 696, 898, 965] | 12 | 11.406
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [15, 45, 62, 112, 141, 146, 152, 153, 168, 169, 172, 217, 229, 237] | 14 | 1.207
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [21, 24, 79, 84, 99, 134, 155, 160, 172, 184, 190, 200, 204] | 13 | 1.217
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [15, 44, 62, 78, 82, 86, 152, 172, 178, 182, 191, 205, 233, 243] | 14 | 1.304
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [3, 11, 21, 31, 35, 63, 67, 77, 103, 115, 130, 206, 212, 236] | 14 | 1.202
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G3000.adjlist | 3000 | [21, 90, 122, 395, 533, 565, 661, 724, 1008, 1018, 1040, 1067, 1252, 1291, 1510, 1606, 1734, 1812, 1889, 2032, 2551, 2647, 2711, 2728, 2775, 2839, 2962] | 27 | 167.073
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [7, 29, 31, 32, 34, 67, 84, 97, 130, 153, 162, 168, 172, 217, 226] | 15 | 4.182
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G6000.adjlist | 6000 | [19, 57, 95, 133, 290, 328, 366, 404, 561, 599, 637, 675, 832, 870, 908, 946, 1103, 1141, 1179, 1217, 1374, 1412, 1450, 1488, 1645, 1683, 1721, 1759, 1916, 1954, 1992, 2030, 2187, 2225, 2263, 2301, 2458, 2496, 2534, 2572, 2610, 2729, 2767, 2805, 2843, 2881, 3000, 3038, 3076, 3114, 3152, 3271, 3309, 3347, 3385, 3423, 3542, 3580, 3618, 3656, 3694, 3813, 3851, 3889, 3927, 3965, 4084, 4122, 4160, 4198, 4236, 4355, 4393, 4431, 4469, 4507, 4626, 4664, 4702, 4740, 4778, 4935, 4973, 5011, 5049, 5206, 5244, 5282, 5320, 5477, 5515, 5553, 5591, 5748, 5786, 5824, 5862] | 97 | 664.365
