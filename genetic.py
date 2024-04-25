@@ -3,7 +3,7 @@
 # Created: Monday, April 22nd 2024 at 9:20:7                                   #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Thursday, April 25th 2024 12:36:20                            #
+# Last Modified: Thursday, April 25th 2024 13:23:40                            #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
@@ -26,6 +26,14 @@
 from matplotlib import pyplot as plt
 import networkx as nx
 import random
+
+# GA Constants
+STAGNANCY = 50
+INITIAL_POPULATION = 100
+SELECTION_PROB = 0.7
+MUTATION_PROB = 0.4
+CUTS = 10
+GENS_CUT_REDUCTION = 20
 
 
 def preprocess(graph):
@@ -50,7 +58,7 @@ def chromosomeToClique(chromosome: list):
 
 def initialPopulation(graph: nx.Graph):
     population = []
-    popSize = 100
+    popSize = INITIAL_POPULATION
 
     while len(population) < popSize:
         subset = []
@@ -84,7 +92,7 @@ def initialPopulation(graph: nx.Graph):
         chromosome = [1 if node in subset else 0 for node in graph.nodes]
         population.append(chromosome)
 
-    population = mutatePopulation(population, 0.7, 0.4)
+    population = mutatePopulation(population, SELECTION_PROB, MUTATION_PROB)
     for i in range(len(population)):
         population[i] = optimizeChromosome(population[i], graph)
 
@@ -134,6 +142,9 @@ def normalizeFitness(fitnessVals):
     minFit = min(fitnessVals)
     maxFit = max(fitnessVals)
     fitRange = maxFit - minFit
+    # Handle fit range of zero
+    if fitRange == 0:
+        return [0.5] * len(fitnessVals)
     # Scaled 0.1 to 0.9 to prevent hard 0 - 1 fitnessvals for small clique sizes
     normalizedFitnessVals = [
         float(fitness - minFit) / float(fitRange) * (0.9 - 0.1) + 0.1
@@ -213,7 +224,7 @@ def getChildren(graph: nx.Graph, parents: list, numCuts: int):
     children = [list(), list()]
     children[0], children[1] = crossover(parents[0], parents[1], numCuts)
     for i in range(0, 2):
-        children[i] = mutateChromosome(children[i], 0.7, 0.4)
+        children[i] = mutateChromosome(children[i], SELECTION_PROB, MUTATION_PROB)
         children[i] = optimizeChromosome(children[i], graph)
     return children
 
@@ -289,37 +300,62 @@ def replacement(parents: list, children: list, population: list, fitnessVals: li
 
     # Replace parents if child is more fit
     if bestChildFit > getFitness(closeParent):
-        population[population.index(closeParent)] = bestChild
-        fitnessVals[population.index(closeParent)] = bestChildFit
+        newPos = population.index(closeParent)
+        fitnessVals[newPos] = bestChildFit
+        population[newPos] = bestChild
     elif bestChildFit > getFitness(farParent):
-        population[population.index(farParent)] = bestChild
-        fitnessVals[population.index(farParent)] = bestChildFit
+        newPos = population.index(farParent)
+        fitnessVals[newPos] = bestChildFit
+        population[newPos] = bestChild
     # Otherwise replace the weakest member in the population
     else:
-        population[fitnessVals.index(min(fitnessVals))] = bestChild
-        fitnessVals[fitnessVals.index(min(fitnessVals))] = bestChildFit
+        newPos = fitnessVals.index(min(fitnessVals))
+        population[newPos] = bestChild
+        fitnessVals[newPos] = bestChildFit
+
+
+# Get total fitness of the population
+def getPopulationFitness(population: list):
+    totalFitness = 0
+    for chromosome in population:
+        totalFitness += getFitness(chromosome)
+    return totalFitness
 
 
 def maxClique(graph):
-    # Constants
-    cuts = 10
-
     # Preprocessing
     graph = preprocess(graph)
 
     # Initial population
+    print("Initializing Population...")
     population = initialPopulation(graph)
+    print("Initializing Fitness...")
     fitnessVals = initialFitness(population)
 
+    stagnancy = 0
+    bestGenFit = 0
+    generation = 0
+    cuts = CUTS
+
     # Genetic algorithm iterations
-    for generation in range(20):
-        print(f"Generation: {generation}")
+    while stagnancy != STAGNANCY:
+        if generation % GENS_CUT_REDUCTION == 0 and cuts > 2 and generation != 0:
+            cuts -= 2
+        print(f"Generation: {generation}, Best Gen Fit: {bestGenFit}, Cuts: {cuts}")
         # Parent selection
         parents = getParents(population, fitnessVals)
         # Crossover, mutate, and optimize children
-        children = getChildren(graph, parents, cuts)
+        children = getChildren(graph, parents, CUTS)
         # Replace parent with offspring
         replacement(parents, children, population, fitnessVals)
+
+        if getPopulationFitness(population) <= bestGenFit:
+            stagnancy += 1
+        else:
+            bestGenFit = getPopulationFitness(population)
+            stagnancy = 0
+
+        generation += 1
 
     # Find best chromosome in final population
     bestChromosomePos = fitnessVals.index(max(fitnessVals))
