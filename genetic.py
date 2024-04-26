@@ -3,7 +3,7 @@
 # Created: Monday, April 22nd 2024 at 9:20:7                                   #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Thursday, April 25th 2024 13:23:40                            #
+# Last Modified: Friday, April 26th 2024 15:44:08                              #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
@@ -21,7 +21,6 @@
 # 10. Update stopping condition
 # 11. return the best member of the population
 
-
 # Imports
 from matplotlib import pyplot as plt
 import networkx as nx
@@ -36,6 +35,7 @@ CUTS = 10
 GENS_CUT_REDUCTION = 20
 
 
+# Turns string labels into int labels for enumeration later
 def preprocess(graph):
     # degrees = dict(graph.degree())
     # sorted_nodes = sorted(degrees.items(), key=lambda x: x[1], reverse=True)
@@ -46,16 +46,19 @@ def preprocess(graph):
     return newGraph
 
 
+# Turns a networkx subgraph into a chromosome used in this script
 def subgraphToChromosome(graph: nx.Graph, subgraph: nx.Graph):
     chromosome = [1 if node in subgraph.nodes else 0 for node in graph.nodes]
     return chromosome
 
 
+# Turns a chromosome back into a valid clique
 def chromosomeToClique(chromosome: list):
     clique = [i for i, gene in enumerate(chromosome) if gene == 1]
     return clique
 
 
+# Initializes the first population of the genetic algorithm
 def initialPopulation(graph: nx.Graph):
     population = []
     popSize = INITIAL_POPULATION
@@ -99,14 +102,15 @@ def initialPopulation(graph: nx.Graph):
     return population
 
 
+# Determines intitial fitness of the whole population
 def initialFitness(population: list):
     fitnessVals = []
     for chromosome in population:
-
         fitnessVals.append(getFitness(chromosome))
     return fitnessVals
 
 
+# Mutates the population, selecting random chromosomes and genes to mutate
 def mutatePopulation(population, selectionProbability, mutationProbability):
     mutatedPop = []
     for chromosome in population:
@@ -118,6 +122,7 @@ def mutatePopulation(population, selectionProbability, mutationProbability):
     return mutatedPop
 
 
+# Mutates randomly selected genes in a chromosome if it is selected
 def mutateChromosome(chromosome: list, selectionProbability, mutationProbability):
     if random.random() <= selectionProbability:
         mutatedChromosome = []
@@ -153,6 +158,7 @@ def normalizeFitness(fitnessVals):
     return normalizedFitnessVals
 
 
+# Creates new children from parents using a multipoint crossover
 def crossover(parent1, parent2, numCrossovers):
     # Multi point crossover
     child1 = []
@@ -174,12 +180,14 @@ def crossover(parent1, parent2, numCrossovers):
     return child1, child2
 
 
+# Pulls a clique out of a chromosome and then optimizes that click through random search
 def optimizeChromosome(chromosome, graph):
     optimizedChromosome = cliqueExtraction(chromosome, graph)
     optimizedChromosome = cliqueImprovement(optimizedChromosome, graph)
     return optimizedChromosome
 
 
+# Improves a given chromosome by expanding its clique if possible
 def cliqueImprovement(chromosome: list, graph: nx.Graph):
     clique = chromosomeToClique(chromosome)
 
@@ -202,6 +210,8 @@ def cliqueImprovement(chromosome: list, graph: nx.Graph):
     return improvedChromosome
 
 
+# Uses a roulette wheel style of selection to select parents from the population
+# better odds for more fit parents)
 def getParents(population: list, fitnessVals: list):
 
     parents = []
@@ -220,6 +230,7 @@ def getParents(population: list, fitnessVals: list):
     return parents
 
 
+# Compines the crossover, mutation and optimization to return 2 children
 def getChildren(graph: nx.Graph, parents: list, numCuts: int):
     children = [list(), list()]
     children[0], children[1] = crossover(parents[0], parents[1], numCuts)
@@ -229,6 +240,7 @@ def getChildren(graph: nx.Graph, parents: list, numCuts: int):
     return children
 
 
+# Checks if a subgraph is a clique or not
 def isClique(subgraph: nx.Graph):
     for node1 in subgraph.nodes():
         for node2 in subgraph.nodes():
@@ -237,6 +249,7 @@ def isClique(subgraph: nx.Graph):
     return True
 
 
+# Pulls a valid clique out of a chromosome
 def cliqueExtraction(chromosome: list, graph: nx.Graph):
     subgraphNodes = [i for i, bit in enumerate(chromosome) if bit == 1]
     subgraph = nx.Graph()
@@ -322,6 +335,7 @@ def getPopulationFitness(population: list):
     return totalFitness
 
 
+# Main Function for this file, returns maxClique solved to maxClique.py
 def maxClique(graph):
     # Preprocessing
     graph = preprocess(graph)
