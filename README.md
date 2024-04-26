@@ -1,15 +1,12 @@
 # maxClique Project
 
-## TO - DO
-- Edit line 38, to use file picker function instead of hardoced file path at the top of the main function in maxClique.py
-
 ## Details
 Author: Jonathan Williams 
 
 Created: Friday, April 19th 2024 at 10:12:08
 
 ## Purpose
-To discover a good max clique solution to a given graph constructed from an adjaceny list file.
+To discover a good max clique solution to a given graph constructed from an adjaceny list file through various methods.
 
 ## Use
 Run maxClique.py and use the file dialog that pops up to select a **graph adjaceny list** *adjaceny matrices won't function properly*
@@ -24,13 +21,12 @@ The program then allows the user to select a chosen algorithm to run on the load
 
 Then it returns the list of nodes in the maximal clique found by the chosen algorithm, and the size of the found clique. It also appends some statistics about the execution to a data.txt file.
 
-
 The key of the output data is shown below:
 ``` txt
 Algorithm Name | FileName | Num of Nodes in Graph | List of Clique Nodes | Size of Clique | Run Time in Seconds
 ```
 
-The program continues to run on the chosen graph until the user quits with 'q'. This allows the user to continually execute the same or different algorithms on the same graph quickly without reloading the program and graph into memory.
+The program continues to run on the chosen graph until the user quits by clicking the "quit" button. This allows the user to continually execute the same or different algorithms on the same graph quickly without reloading the program and graph into memory.
 
 # Algorithms
 
@@ -58,3 +54,18 @@ This method _heavily_ depends on the effectiveness of the VC found, so this vers
 
 _From: https://www.cs.cmu.edu/~avrim/451f13/lectures/lect1105.pdf_
 
+## Original Genetic Algorithm
+
+This method draws inspiration from Genetic Algorithms and makes use of a population of lists representing cliques that we call _chromosomes_. We perform various operations on these chromosomes in several _generations_ of the _population_, which is a collection of chromosomes.
+
+1. We initialize the population.
+    - First by randomly creating chromosomes which may or may not be valid cliques
+    - Then we optimize the entire population by extracting a maximum clique and optimizing the chromosome's clique
+    - We determine the _fitness_ of every chromosome in the population by checking the clique's size
+2. We Continually create new generations of the population until we stop improving. We make new generations as follows:
+    1. First we take two parents from the population and use crossover to create two new children chromosomes.
+    2. Then each child is mutated, randomly changing some of its genes according to a pre-defined probability to introduce diversity.
+    3. Each child is then optimized to ensure it is a clique, and potentially expanding that clique.
+    4. If the stronger child is better than either parent, it replaces it, or the weakest member in the population if not.
+    5. This cycle continues until the algorithm grows _stagnant_. Stagnancy is when the total fitness of the generation stops increasing for a certain number of generations, I have currently defined at 50.
+3. Once the algorithm grows stagnant, it exits and find the strongest (or largest) clique in the population. Returning it to the driver program.
