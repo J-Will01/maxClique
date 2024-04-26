@@ -3,14 +3,14 @@
 # Created: Friday, April 19th 2024 at 10:12:08                                 #
 # Author: Jonathan Williams                                                    #
 # -----                                                                        #
-# Last Modified: Wednesday, April 24th 2024 12:54:40                           #
+# Last Modified: Friday, April 26th 2024 15:57:51                              #
 # Modified By: Jonathan Williams                                               #
 ###############################################################################
 
 import sys
-import bruteForce
-import graphComplement
-import genetic
+import algorithms.bruteForce as bruteForce
+import algorithms.graphComplement as graphComplement
+import algorithms.genetic as genetic
 
 import networkx as nx
 import matplotlib.pyplot as plt

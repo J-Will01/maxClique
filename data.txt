@@ -118,3 +118,5 @@ Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxCliq
 Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | ['47', '116', '118', '160', '172', '190'] | 6 | 3.676
 Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [1, 7, 15, 27, 34, 72, 86, 93, 141, 170, 173, 217, 220, 222] | 14 | 3.792
 Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [21, 54, 79, 84, 94, 99, 116, 134, 155, 160, 162, 172, 181, 190, 204] | 15 | 6.402
+Vertex Cover | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | ['31', '83', '221', '236'] | 4 | 3.045
+Original GA | /Users/jwill/Desktop/school/Spring24/CS470/P3 - Max Clique/maxClique/competition/G250.adjlist | 250 | [3, 7, 15, 29, 31, 34, 45, 67, 111, 119, 153, 162, 172, 217, 222] | 15 | 4.228
